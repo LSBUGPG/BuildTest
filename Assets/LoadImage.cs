@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LoadImage : MonoBehaviour
@@ -15,5 +16,10 @@ public class LoadImage : MonoBehaviour
         int count = files.Count;
         int random = Random.Range(0, count);
         image.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(files[random]);
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("BuildTest");
     }
 }
